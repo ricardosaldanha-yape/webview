@@ -7,8 +7,8 @@ import ILayout from '@/app/types/layout'
 import isDev from '@/app/utils/is-dev'
 import { DevTokenSetter } from '@/app/utils/native/dev-token-setter'
 import { NativeBridgeProvider } from '@/app/utils/native/native-bridge-provider'
-import { NativeTokenGate } from '@/app/utils/native/native-token-gate'
 
+// import { NativeTokenGate } from '@/app/utils/native/native-token-gate'
 import '@/app/styles/globals.css'
 
 const roboto = Roboto({
@@ -35,7 +35,8 @@ const LayoutRoot = ({ children }: ILayout) => {
         <HttpProvider>
           <NativeBridgeProvider />
           {isDev() && <DevTokenSetter />}
-          <NativeTokenGate>{children}</NativeTokenGate>
+          {children}
+          {/* <NativeTokenGate>{children}</NativeTokenGate> */}
         </HttpProvider>
       </body>
     </html>
