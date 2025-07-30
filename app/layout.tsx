@@ -1,6 +1,6 @@
 import { Roboto } from 'next/font/google'
-import { headers } from 'next/headers'
 
+// import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 
 import { HttpProvider } from '@/app/services/http'
@@ -26,19 +26,19 @@ export const metadata: Metadata = {
 }
 
 const LayoutRoot = async ({ children }: ILayout) => {
-  const headersList = headers()
-  const nonce = (await headersList).get('x-nonce') || undefined
+  // const headersList = headers()
+  // const nonce = (await headersList).get('x-nonce') || undefined
 
   return (
     <html lang='en'>
       <head>
         {/* Meta tag com nonce para Next.js 15 */}
-        {nonce && (
+        {/* {nonce && (
           <meta
             name='csp-nonce'
             content={nonce}
           />
-        )}
+        )} */}
       </head>
       <body
         className={`${roboto.variable} font-roboto antialiased`}
